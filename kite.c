@@ -8,7 +8,7 @@
 int main()
 {
 	int gd=DETECT,gm;
-	int x=500,y=500;
+	int x=500,y=500,tr=0;
 	initgraph(&gd,&gm,"..\\bgi");
 	while(!kbhit())
 	{
@@ -16,13 +16,21 @@ int main()
 		setcolor(YELLOW);
 		if(y==0)
 		{
-			y=500;
-			x=500;
-		}
-		else
-		{
-			y--;
-			x--;
+		    if(tr%2 == 0){
+                y=500;
+                x=500;
+            }
+            else{
+                y=500;
+                x=0;
+            }
+        }
+		else{
+
+            y--;
+            x--;
+
+            //tr++;
 			//setcolor(RED);
 			line(x-50,y,x,y-70);
 			//setcolor(RED);
